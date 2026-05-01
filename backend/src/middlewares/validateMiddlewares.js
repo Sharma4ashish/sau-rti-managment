@@ -1,10 +1,15 @@
 const ApiError = require("../utils/ApiError");
 const { ZodError } = require("zod");
 
-const validate = (schema) => (req, res, next) => {
+
+const validate = (schema, source = "body") => (req, res, next) => {
   try {
-    const data = schema.parse(req.body);
-    req.body = data;
+    console.log("---------------------------",req[source]);
+    const parsedData = schema.parse(req[source] || {}); // source = body | query | params
+
+    req[source] = parsedData;
+
+
     next();
   } catch (error) {
     if (error instanceof ZodError) {
@@ -13,12 +18,10 @@ const validate = (schema) => (req, res, next) => {
         message: issue.message,
       }));
 
-      return next(
-        new ApiError(400, "Validation failed", errors)
-      );
+      return next(new ApiError(400, "Validation failed", errors));
     }
 
-    next(new ApiError(500, "Something went wrong"));
+    return next(new ApiError(500, "Something went wrong"));
   }
 };
 
