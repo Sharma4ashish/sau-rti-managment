@@ -8,7 +8,6 @@ const createRTI = async (req, res, next) => {
   try {
     const payload = { ...req.body };
 
-    console.log(typeof(payload.isDraft));
     
     if (
       payload.isDraft !== "true" &&

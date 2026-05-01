@@ -6,11 +6,17 @@ const ApiError = require("../utils/ApiError");
  */
 const createRTI = async (payload) => {
 
-  //deletefiles multer uploaded if error happer in between saving data to db
+    //deletefiles multer uploaded if error happer in between saving data to db
 
-  if (!payload.rtiCaseNumber) {
-    throw new ApiError(400, "RTI Case Number is required");
-  }
+    // if (!payload.rtiCaseNumber) {
+    //   throw new ApiError(400, "RTI Case Number is required");
+    // }
+
+    if (!payload.department) {
+      throw new ApiError(400, "Department is required");
+    }
+    payload.rtiCaseNumber = await generateRTICaseNumber(payload.department);
+
 
   const existing = await RTI.findOne({
     rtiCaseNumber: payload.rtiCaseNumber,
@@ -138,6 +144,18 @@ const updateRTI = async (id, payload) => {
   }
 
   return updated;
+};
+
+
+const generateRTICaseNumber = async (department) => {
+  const year = new Date().getFullYear();
+
+  // count all records for this department
+  const count = await RTI.countDocuments({ department });
+
+  const sequence = String(count + 1).padStart(4, "0");
+
+  return `RTI/${year}/${department.toUpperCase()}/${sequence}`;
 };
 
 module.exports = {
