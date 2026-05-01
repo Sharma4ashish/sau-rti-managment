@@ -20,8 +20,8 @@ const documentSchema = new mongoose.Schema(
       type: String,
       required: true,
       enum: {
-        values: ["image/jpeg", "image/jpg"],
-        message: "Only JPEG/JPG images are allowed",
+        values: ["image/jpeg", "image/jpg","application/pdf"],
+        message: "Only JPEG/JPG/PDF files are allowed",
       },
     },
 
@@ -179,8 +179,12 @@ const rtiSchema = new mongoose.Schema(
     },
 
     additionalAttachments: {
-      type: documentSchema,
-      default: null,
+      type: [documentSchema],
+      default: [],
+      validate: {
+        validator: (val) => val.length <= 2,
+        message: "Max 2 attachments allowed",
+      },
     },
 
     /* ---------------- Status ---------------- */

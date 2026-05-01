@@ -1,34 +1,50 @@
 const rtiService = require("../services/rtiService");
 
 /**
- * Create RTI
+ * @desc Create a new RTI
+ * @route POST /api/rti
  */
 const createRTI = async (req, res, next) => {
   try {
     const payload = { ...req.body };
 
-    // transformation only (allowed in controller)
+    console.log(typeof(payload.isDraft));
+    
+    if (
+      payload.isDraft !== "true" &&
+      payload.isDraft !=="false"
+    ) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid isDraft value. Use 'true' or 'false'.",
+      });
+    }
+
     payload.status = payload.isDraft ? "Save Draft" : "Pending";
     delete payload.isDraft;
 
-    if (req.file) {
-      payload.uploadApplication = {
-        filename: req.file.filename,
-        originalName: req.file.originalname,
-        mimetype: req.file.mimetype,
-        size: req.file.size,
-        path: req.file.path,
-      };
-    }
+    if (req.files?.uploadApplication?.[0]) {
+      const file = req.files.uploadApplication[0];
 
-    if (req.files && Array.isArray(req.files)) {
-      payload.additionalAttachments = req.files.map((file) => ({
-        filename: file.filename,
+      payload.uploadApplication = {
+        path: file.path, //mkaa this url
+        public_id: file.filename,
         originalName: file.originalname,
         mimetype: file.mimetype,
         size: file.size,
-        path: file.path,
-      }));
+      };
+    }
+
+    if (req.files?.additionalAttachments?.length) {
+      payload.additionalAttachments = req.files.additionalAttachments.map(
+        (file) => ({
+          path: file.path,
+          public_id: file.filename,
+          originalName: file.originalname,
+          mimetype: file.mimetype,
+          size: file.size,
+        })
+      );
     }
 
     const data = await rtiService.createRTI(payload);
@@ -38,25 +54,21 @@ const createRTI = async (req, res, next) => {
       message: "RTI created successfully",
       data,
     });
+
   } catch (error) {
     next(error);
   }
 };
 
-
-
-
-
-
-
+/**
+ * @desc Get all RTIs
+ * @route GET /api/rti
+ */
 const getAllRTIs = async (req, res, next) => {
   try {
-    const query = req.query;
-    console.log("-----------------------------", req.query);
+    const data = await rtiService.getRTIs(req.query);
 
-    const data = await rtiService.getRTIs(query);
-
-    res.status(200).json({
+    return res.status(200).json({
       success: true,
       message: "RTIs fetched successfully",
       data,
@@ -66,16 +78,9 @@ const getAllRTIs = async (req, res, next) => {
   }
 };
 
-
-
-
-
-
-
 /**
- *
- * @param {\} req ID in params} req
- * @param {*} res RTI data in response
+ * @desc Get RTI by ID
+ * @route GET /api/rti/:id
  */
 const getRTIById = async (req, res, next) => {
   try {
@@ -83,7 +88,7 @@ const getRTIById = async (req, res, next) => {
 
     const data = await rtiService.getRTIById(id);
 
-    res.status(200).json({
+    return res.status(200).json({
       success: true,
       message: "RTI fetched successfully",
       data,
@@ -93,19 +98,17 @@ const getRTIById = async (req, res, next) => {
   }
 };
 
-
-
-
-
-
-
+/**
+ * @desc Delete RTI
+ * @route DELETE /api/rti/:id
+ */
 const deleteRTI = async (req, res, next) => {
   try {
     const { id } = req.params;
 
     await rtiService.deleteRTI(id);
 
-    res.status(200).json({
+    return res.status(200).json({
       success: true,
       message: "RTI deleted successfully",
     });
@@ -114,14 +117,32 @@ const deleteRTI = async (req, res, next) => {
   }
 };
 
+/**
+ * @desc Update RTI
+ * @route PUT /api/rti/:id
+ */
+const updateRTI = async (req, res, next) => {
+  try {
+    const { id } = req.params;
 
+    const payload = { ...req.body };
 
+    const updatedRTI = await rtiService.updateRTI(id, payload);
 
-
+    return res.status(200).json({
+      success: true,
+      message: "RTI updated successfully",
+      data: updatedRTI,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
 
 module.exports = {
   createRTI,
   getAllRTIs,
   getRTIById,
-  deleteRTI
+  deleteRTI,
+  updateRTI,
 };

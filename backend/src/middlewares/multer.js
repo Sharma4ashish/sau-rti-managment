@@ -1,5 +1,7 @@
 const multer = require("multer");
 const path = require("path");
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
+const cloudinary = require("../config/cloudinary");
 
 const MAX_FILE_SIZE = 1 * 1024 * 1024;
 
@@ -12,18 +14,31 @@ const ALLOWED_TYPES = [
 
 
 // storing in server for now in uploads folder
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "uploads/");
-  },
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, "uploads/");
+//   },
 
-  filename: (req, file, cb) => {
-    const ext = path.extname(file.originalname);
-    const name = file.originalname
-      .replace(ext, "")
-      .replace(/\s+/g, "_");
+//   filename: (req, file, cb) => {
+//     const ext = path.extname(file.originalname);
+//     const name = file.originalname
+//       .replace(ext, "")
+//       .replace(/\s+/g, "_");
 
-    cb(null, `${Date.now()}-${name}${ext}`);
+//     cb(null, `${Date.now()}-${name}${ext}`);
+//   },
+// });
+
+const storage = new CloudinaryStorage({
+  cloudinary,
+  params: async (req, file) => {
+    const format = file.mimetype.split("/")[1];
+
+    return {
+      folder: "rti_uploads",
+      resource_type: format === "pdf" ? "raw" : "image",
+      public_id: `${Date.now()}-${file.originalname.replace(/\s+/g, "_")}`,
+    };
   },
 });
 
