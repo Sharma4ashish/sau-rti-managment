@@ -13,7 +13,7 @@ import SidebarItem from "./SidebarItem";
 
 function Sidebar() {
   return (
-    <aside className="w-64 bg-white shadow-md flex flex-col hidden md:flex">
+    <aside className="w-64 bg-white shadow-md flex flex-col">
       <div className="h-16 bg-blue-900 flex items-center justify-center text-white font-bold text-xl">
         SAU  
       </div>
