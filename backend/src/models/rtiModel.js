@@ -1,9 +1,15 @@
 const mongoose = require('mongoose');
 
-const fileSchema = {
-  fileName: String,
-  fileUrl: String,
-};
+const documentSchema = new mongoose.Schema(
+  {
+    filename: String,
+    originalName: String,
+    mimetype: String,
+    size: Number,
+    path: String,
+  },
+  { _id: false }
+);
 
 const rtiSchema = new mongoose.Schema(
   {
@@ -40,6 +46,7 @@ const rtiSchema = new mongoose.Schema(
     },
     applicationMode: {
       type: String,
+      required: true,
       enum: ['online', 'offline'],
     },
     dateOfReceipt: {
@@ -59,7 +66,10 @@ const rtiSchema = new mongoose.Schema(
       required: true,
     },
     extendedDueDate: Date,
-    reminderFrequency: String,
+    reminderFrequency: {
+      type: String,
+      required: true,
+    },
 
     status: {
       type: String,
@@ -67,8 +77,8 @@ const rtiSchema = new mongoose.Schema(
       default: 'draft',
     },
 
-    uploadedApplication: fileSchema,
-    additionalAttachments: [fileSchema],
+    uploadedApplication: documentSchema,
+    additionalAttachments: [documentSchema],
   },
   { timestamps: true }
 );
