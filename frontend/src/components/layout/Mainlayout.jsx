@@ -13,7 +13,7 @@ function MainLayout() {
 
         <main className="flex-1 overflow-y-auto p-6">
           <Outlet />
-          <h1>Componetns </h1>
+          <h1>Components</h1>
         </main>
       </div>
     </div>

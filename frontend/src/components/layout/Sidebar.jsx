@@ -7,6 +7,7 @@ import {
   BarChart,
   Settings,
   LogOut,
+  LayoutDashboard
 } from "lucide-react";
 import SidebarItem from "./SidebarItem";
 
@@ -18,7 +19,8 @@ function Sidebar() {
       </div>
 
       <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
-        <p className="text-gray-500 font-semibold mb-4 text-sm">Dashboard</p>
+        {/* <p className="text-gray-500 font-semibold mb-4 text-sm">Dashboard</p> */}
+        <SidebarItem to="/" icon={LayoutDashboard} label="Dashboard" />
 
         <SidebarItem to="/" icon={FileText} label="RTI Management" active />
 
@@ -27,10 +29,8 @@ function Sidebar() {
         <SidebarItem icon={File} label="Documents" />
         <SidebarItem icon={BarChart} label="Reports & Analytics" />
 
-        <div className="mt-8">
           <SidebarItem icon={Settings} label="Notifications & Settings" />
           <SidebarItem icon={LogOut} label="Logout" />
-        </div>
       </nav>
     </aside>
   );
