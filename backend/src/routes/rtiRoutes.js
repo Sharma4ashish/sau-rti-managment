@@ -1,13 +1,13 @@
 const express = require("express");
 const { createRTI } = require("../controllers/rtiController");
-const { get } = require("mongoose");
+const validate = require("../middlewares/validateMiddlewares");
+const { createRTISchema } = require("../utils/validatorSchema");
 const router = express.Router()
-
 
 
 /**
  * @swagger
- * /rtis:
+ * /rti:
  *   post:
  *     summary: Create a new RTI
  *     tags: [RTI]
@@ -45,7 +45,7 @@ const router = express.Router()
  *                 type: string
  *               applicationMode:
  *                 type: string
- *                 enum: [online, offline]
+ *                 enum: [Online, Offline]
  *               description:
  *                 type: string
  *               isDraft:
@@ -54,10 +54,7 @@ const router = express.Router()
  *       201:
  *         description: RTI created successfully
  */
-router.post("/", createRTI);
 
-// router.get("/", getAllRTIs);
-// router.get("/:id", getRTI);
+router.post("/", validate(createRTISchema), createRTI);
 
-
-module.exports = router
+module.exports = router;

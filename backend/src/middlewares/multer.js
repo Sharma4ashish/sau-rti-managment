@@ -1,7 +1,7 @@
 const multer = require("multer");
 const path = require("path");
 
-const MAX_FILE_SIZE = 2 * 1024 * 1024;
+const MAX_FILE_SIZE = 1 * 1024 * 1024;
 
 // file types allowed jpg/jpeg and pdf only
 const ALLOWED_TYPES = [

@@ -92,7 +92,10 @@ const rtiSchema = new mongoose.Schema(
     /* --------------------------- RTI Details -------------------------------- */
     rtiCaseNumber: {
       type: String,
+      required: true,
       unique: true,
+      trim: true,
+      uppercase: true,
     },
     
     subject: {
@@ -196,7 +199,7 @@ const rtiSchema = new mongoose.Schema(
   }
 );
 
-rtiSchema.index({ rtiCaseNumber: 1 });
+// rtiSchema.index({ rtiCaseNumber: 1 });
 rtiSchema.index({ status: 1 });
 rtiSchema.index({ createdAt: -1 });
 rtiSchema.index({ department: 1});
