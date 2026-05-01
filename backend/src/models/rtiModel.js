@@ -28,7 +28,7 @@ const documentSchema = new mongoose.Schema(
     size: {
       type: Number,
       default: null,
-      max: [5 * 1024 * 1024, "File size should not exceed 5MB"], // optional limit
+      max: [1 * 1024 * 1024, "File size should not exceed 1MB"], // optional limit 
     },
 
     path: {
@@ -198,6 +198,11 @@ const rtiSchema = new mongoose.Schema(
 
 rtiSchema.index({ rtiCaseNumber: 1 });
 rtiSchema.index({ status: 1 });
+rtiSchema.index({ createdAt: -1 });
+rtiSchema.index({ department: 1});
+
+
+
 
 
 module.exports = mongoose.model('RTI', rtiSchema);

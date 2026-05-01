@@ -9,3 +9,4 @@ module.exports = {
 
   STATUS: ["Pending", "Verified", "Rejected", "Save Draft"],
 };
+
