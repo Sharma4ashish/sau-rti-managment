@@ -1,20 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MainLayout from './components/layout/Mainlayout';
+// import RtiList from './pages/RtiList';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <h1 class="text-3xl font-bold underline text-amber-200  ">    Hello world!</h1>
-  
-      </section>
-    </>
-  )
+    <Router>
+      <Routes>
+        {/* MainLayout wraps all routes inside it */}
+        <Route path="/" element={<MainLayout />}>
+          {/* <Route index element={<RtiList />} /> */}
+          {/* We will add the Form and Details routes here next */}
+        </Route>
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
