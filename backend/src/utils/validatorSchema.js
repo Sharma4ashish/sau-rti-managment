@@ -1,4 +1,5 @@
 const { z } = require("zod");
+const mongoose = require("mongoose");
 
 const createRTISchema = z.object({
   applicantName: z.string({ required_error: "Applicant name is required" }).min(1, "Applicant name is required").max(100),
@@ -35,6 +36,40 @@ const createRTISchema = z.object({
   isDraft: z.boolean().optional(),
 });
 
+
+
+const getRTIsQuerySchema = z.object({
+  page: z.coerce.number().min(1).default(1),
+  limit: z.coerce.number().min(1).max(20).default(10),
+
+  department: z.enum(["Manager", "Supervisor", "Accountant"]).optional(),
+
+  status: z.enum(["Verified", "Pending", "Rejected", "Save Draft"]).optional(),
+
+  date: z.enum(["new", "old"]).default("new"),
+});
+
+
+// We can use UUID instead of MongoDB ObjectId 
+const getRTIByIdSchema = z.object({
+  id: z.string().refine((val) => mongoose.Types.ObjectId.isValid(val), {
+    message: "Invalid RTI ID",
+  }),
+});
+
+// can merge with getRTIByIdSchema if we use UUID instead of MongoDB ObjectId 
+const deleteRTISchema = z.object({
+  id: z.string().refine(
+    (val) => mongoose.Types.ObjectId.isValid(val),
+    { message: "Invalid RTI ID" }
+  ),
+});
+
+
+
 module.exports = {
   createRTISchema,
+  getRTIsQuerySchema,
+  getRTIByIdSchema,
+  deleteRTISchema
 };

@@ -38,7 +38,6 @@ const createRTI = async (req, res, next) => {
       message: "RTI created successfully",
       data,
     });
-
   } catch (error) {
     next(error);
   }
@@ -46,12 +45,21 @@ const createRTI = async (req, res, next) => {
 
 
 
-// pagination and and filtering and searching and all that s
+
+
+
+
 const getAllRTIs = async (req, res, next) => {
   try {
-    res.status(501).json({
-      success: false,
-      message: "createRTI not implemented yet",
+    const query = req.query;
+    console.log("-----------------------------", req.query);
+
+    const data = await rtiService.getRTIs(query);
+
+    res.status(200).json({
+      success: true,
+      message: "RTIs fetched successfully",
+      data,
     });
   } catch (error) {
     next(error);
@@ -60,7 +68,60 @@ const getAllRTIs = async (req, res, next) => {
 
 
 
+
+
+
+
+/**
+ *
+ * @param {\} req ID in params} req
+ * @param {*} res RTI data in response
+ */
+const getRTIById = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    const data = await rtiService.getRTIById(id);
+
+    res.status(200).json({
+      success: true,
+      message: "RTI fetched successfully",
+      data,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+
+
+
+
+
+
+const deleteRTI = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    await rtiService.deleteRTI(id);
+
+    res.status(200).json({
+      success: true,
+      message: "RTI deleted successfully",
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+
+
+
+
+
 module.exports = {
   createRTI,
-  getAllRTIs
+  getAllRTIs,
+  getRTIById,
+  deleteRTI
 };

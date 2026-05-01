@@ -192,6 +192,14 @@ const rtiSchema = new mongoose.Schema(
       },
       default: "Pending",
     },
+
+    /* --------------------- Soft Deleting ---------------- */
+    isDeleted: {
+      type: Boolean,
+      default: false,
+      index: true,
+    },
+
   },
   {
     timestamps: true,

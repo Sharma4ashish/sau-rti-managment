@@ -1,7 +1,7 @@
 const express = require("express");
-const { createRTI } = require("../controllers/rtiController");
+const { createRTI, getAllRTIs, getRTIById,deleteRTI } = require("../controllers/rtiController");
 const validate = require("../middlewares/validateMiddlewares");
-const { createRTISchema } = require("../utils/validatorSchema");
+const { createRTISchema, getRTIsQuerySchema, getRTIByIdSchema,deleteRTISchema } = require("../utils/validatorSchema");
 const router = express.Router()
 
 
@@ -54,7 +54,29 @@ const router = express.Router()
  *       201:
  *         description: RTI created successfully
  */
+router.post("/",
+    validate(createRTISchema, "body"),
+    createRTI
+);
 
-router.post("/", validate(createRTISchema), createRTI);
+
+router.get("/:id", validate(getRTIByIdSchema,
+    "params"),
+    getRTIById
+);
+
+
+router.get("/",
+    validate(getRTIsQuerySchema, "query"),
+    getAllRTIs
+);
+
+
+router.delete(
+  "/:id",
+  validate(deleteRTISchema, "params"),
+  deleteRTI
+);
+
 
 module.exports = router;
