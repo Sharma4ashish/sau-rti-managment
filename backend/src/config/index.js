@@ -1,7 +1,7 @@
 require("dotenv").config()
 
 
-const congif = {
+const config = {
     port: process.env.PORT || 8000,
 
     mongodb: {
@@ -14,4 +14,4 @@ const congif = {
     }
 }
 
-module.exports = congif
+module.exports = config

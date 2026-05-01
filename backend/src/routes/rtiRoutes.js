@@ -1,12 +1,13 @@
 const express = require("express");
 const { createRTI } = require("../controllers/rtiController");
+const { get } = require("mongoose");
 const router = express.Router()
 
 
 
 /**
  * @swagger
- * /rti:
+ * /rtis:
  *   post:
  *     summary: Create a new RTI
  *     tags: [RTI]
@@ -55,8 +56,8 @@ const router = express.Router()
  */
 router.post("/", createRTI);
 
-
-router.post("/", createRTI);
 // router.get("/", getAllRTIs);
+// router.get("/:id", getRTI);
+
 
 module.exports = router
