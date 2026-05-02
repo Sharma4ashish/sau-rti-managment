@@ -37,9 +37,10 @@ A full-stack RTI (Right to Information) management system with pagination, filte
 ### Create RTI
 ![Create RTI](./docs/views/Create%20Rti.png)
 
+![Status Update](./docs/views/filttering.png) 
 
-### Status Update       
-![Status Update](./docs/views/) 
+![Status Update](./docs/views/Required%20Field.png) 
+
 
 ## 🎥 Demo Videos
 
@@ -47,8 +48,10 @@ A full-stack RTI (Right to Information) management system with pagination, filte
   https://youtu.be/8AdD8h079Wg
 
 -  RTI Flow  
-  https://youtu.be/lIMRpqVSvFM
+https://youtu.be/lIMRpqVSvFM
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8AdD8h079Wg?si=pi3gqRbdGY_grh0F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 
