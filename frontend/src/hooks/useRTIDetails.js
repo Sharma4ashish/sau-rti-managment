@@ -1,20 +1,18 @@
+
 import { useEffect, useState } from "react";
-import api from "../services/api";
+import { getRTIDetails } from "../services/rtiService";
+
 export function useRTIDetails(id) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await api.get(`/rtis/${id}`);
-        console.log("resssssssss",res);
-        
-        setData(res.data?.data || res);
+        const result = await getRTIDetails(id);
+        setData(result);
       } catch (err) {
-        console.error(err); 
-        setError("Failed to load RTI details");
+        console.error(err);
       } finally {
         setLoading(false);
       }
@@ -23,5 +21,5 @@ export function useRTIDetails(id) {
     if (id) fetchData();
   }, [id]);
 
-  return { data, loading, error };
+  return { data, loading };
 }

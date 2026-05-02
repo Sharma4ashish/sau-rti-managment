@@ -1,9 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
-function RtiRow({ data }) {
+function RtiRow({ data, onDelete }) {
   const navigate = useNavigate();
-    console.log("neww ",data);
-
 
   const getStatusColor = (status) => {
     switch (status) {
@@ -13,6 +11,8 @@ function RtiRow({ data }) {
         return "text-yellow-600";
       case "Rejected":
         return "text-red-600";
+      case "Save Draft":
+        return "text-blue-600";
       default:
         return "text-gray-600";
     }
@@ -28,9 +28,7 @@ function RtiRow({ data }) {
       <td className="p-3">{data.department || "-"}</td>
 
       <td className="p-3">
-        {data.createdAt
-          ? new Date(data.createdAt).toLocaleDateString()
-          : "-"}
+        {data.createdAt ? new Date(data.createdAt).toLocaleDateString() : "-"}
       </td>
 
       <td className={`p-3 font-semibold ${getStatusColor(data.status)}`}>
@@ -40,7 +38,6 @@ function RtiRow({ data }) {
       {/* ACTIONS */}
       <td className="p-3" onClick={(e) => e.stopPropagation()}>
         <div className="flex gap-2">
-
           <button
             onClick={() => navigate(`/rti/${data._id}`)}
             className="border px-2 py-1 rounded hover:bg-gray-100"
@@ -56,12 +53,14 @@ function RtiRow({ data }) {
           </button>
 
           <button
-            onClick={() => console.log("Delete", data._id)}
+            onClick={(e) => {
+              e.stopPropagation(); // 🔥 important
+              onDelete(data._id);
+            }}
             className="border px-2 py-1 rounded hover:bg-red-100"
           >
             🗑
           </button>
-
         </div>
       </td>
     </tr>

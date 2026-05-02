@@ -1,0 +1,1145 @@
+{
+  "info": {
+    "_postman_id": "0122b77a-e9a5-4888-9437-01069db1fc21",
+    "name": "rti",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "44967180",
+    "_collection_link": "https://go.postman.co/collection/44967180-0122b77a-e9a5-4888-9437-01069db1fc21?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create New Rti",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "applicantName",
+              "value": "Jayan",
+              "type": "text",
+              "uuid": "8a0628d4-5225-487d-b970-1dacbebcfaa6"
+            },
+            {
+              "key": "contactNumber",
+              "value": "123124352",
+              "type": "text",
+              "uuid": "97c32a7d-d053-4eae-8af0-c51d212a8c5a"
+            },
+            {
+              "key": "gender",
+              "value": "Male",
+              "type": "text",
+              "uuid": "ec190c58-eaec-459e-b0c0-253e4fa4f14a"
+            },
+            {
+              "key": "emailId",
+              "value": "u@test.com",
+              "type": "text",
+              "uuid": "d6901cd2-8bf0-4842-82e0-e1995b4b8cd6"
+            },
+            {
+              "key": "address",
+              "value": "Delhi, India",
+              "type": "text",
+              "uuid": "caf42024-1d2e-4a71-ad49-a6762a723d9e"
+            },
+            {
+              "key": "rtiCaseNumber",
+              "value": "",
+              "type": "text",
+              "uuid": "dc45eb60-c8f6-4c68-ae14-20ffeef56dff"
+            },
+            {
+              "key": "subject",
+              "value": "Request for information",
+              "type": "text",
+              "uuid": "597a5624-64bf-413a-9476-99446d204473"
+            },
+            {
+              "key": "applicationMode",
+              "value": "Online",
+              "type": "text",
+              "uuid": "6af35f08-4b62-4f35-bc9b-6ab642cf05f0"
+            },
+            {
+              "key": "dateOfReceipt",
+              "value": "2026-05-01",
+              "type": "text",
+              "uuid": "4efd389e-083a-4753-ab6b-4f67b5884eac"
+            },
+            {
+              "key": "description",
+              "value": "Need details regarding project",
+              "type": "text",
+              "uuid": "de7ad7ff-638c-47c3-8430-b0ee418e9851"
+            },
+            {
+              "key": "department",
+              "value": "Manager",
+              "type": "text",
+              "uuid": "6f00d77f-a5ad-4af0-ad8f-cb7208b92a54"
+            },
+            {
+              "key": "assignedOfficer",
+              "value": "Johny",
+              "type": "text",
+              "uuid": "7de15f33-99f5-4c11-9e97-bac3d124f04e"
+            },
+            {
+              "key": "dueDate",
+              "value": "2026-05-10",
+              "type": "text",
+              "uuid": "d0b05b59-c4b7-45a4-93fc-30a0724d0559"
+            },
+            {
+              "key": "extendedDueDate",
+              "value": "2026-05-15",
+              "type": "text",
+              "uuid": "f77bbe73-9ae2-4aa7-94ed-cf3d3ec66004"
+            },
+            {
+              "key": "reminderFrequency",
+              "value": "3 Days",
+              "type": "text",
+              "uuid": "304401e6-48fa-40c4-bd50-b7e5376b8aa2"
+            },
+            {
+              "key": "isDraft",
+              "value": "false",
+              "type": "text",
+              "uuid": "9a8789b3-f9d3-4ed9-b22b-be9e8225474b"
+            },
+            {
+              "key": "uploadApplication",
+              "type": "file",
+              "uuid": "8dbde353-bd4a-4a8e-8b3e-62ad0f0ef111",
+              "src": "postman-cloud:///1f14583f-89f0-4740-a615-c27b2e5b77d5"
+            },
+            {
+              "key": "additionalAttachments",
+              "type": "file",
+              "uuid": "d18a2cea-8540-4663-bd26-6f25403fc40c",
+              "src": "postman-cloud:///1f145840-b469-4250-a00e-386d1d58360b"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/rtis",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "rtis"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Success Full",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "applicantName",
+                  "value": "Jayan",
+                  "type": "text",
+                  "uuid": "8a0628d4-5225-487d-b970-1dacbebcfaa6"
+                },
+                {
+                  "key": "contactNumber",
+                  "value": "123124352",
+                  "type": "text",
+                  "uuid": "97c32a7d-d053-4eae-8af0-c51d212a8c5a"
+                },
+                {
+                  "key": "gender",
+                  "value": "Male",
+                  "type": "text",
+                  "uuid": "ec190c58-eaec-459e-b0c0-253e4fa4f14a"
+                },
+                {
+                  "key": "emailId",
+                  "value": "u@test.com",
+                  "type": "text",
+                  "uuid": "d6901cd2-8bf0-4842-82e0-e1995b4b8cd6"
+                },
+                {
+                  "key": "address",
+                  "value": "Delhi, India",
+                  "type": "text",
+                  "uuid": "caf42024-1d2e-4a71-ad49-a6762a723d9e"
+                },
+                {
+                  "key": "rtiCaseNumber",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "dc45eb60-c8f6-4c68-ae14-20ffeef56dff"
+                },
+                {
+                  "key": "subject",
+                  "value": "Request for information",
+                  "type": "text",
+                  "uuid": "597a5624-64bf-413a-9476-99446d204473"
+                },
+                {
+                  "key": "applicationMode",
+                  "value": "Online",
+                  "type": "text",
+                  "uuid": "6af35f08-4b62-4f35-bc9b-6ab642cf05f0"
+                },
+                {
+                  "key": "dateOfReceipt",
+                  "value": "2026-05-01",
+                  "type": "text",
+                  "uuid": "4efd389e-083a-4753-ab6b-4f67b5884eac"
+                },
+                {
+                  "key": "description",
+                  "value": "Need details regarding project",
+                  "type": "text",
+                  "uuid": "de7ad7ff-638c-47c3-8430-b0ee418e9851"
+                },
+                {
+                  "key": "department",
+                  "value": "Manager",
+                  "type": "text",
+                  "uuid": "6f00d77f-a5ad-4af0-ad8f-cb7208b92a54"
+                },
+                {
+                  "key": "assignedOfficer",
+                  "value": "Johny",
+                  "type": "text",
+                  "uuid": "7de15f33-99f5-4c11-9e97-bac3d124f04e"
+                },
+                {
+                  "key": "dueDate",
+                  "value": "2026-05-10",
+                  "type": "text",
+                  "uuid": "d0b05b59-c4b7-45a4-93fc-30a0724d0559"
+                },
+                {
+                  "key": "extendedDueDate",
+                  "value": "2026-05-15",
+                  "type": "text",
+                  "uuid": "f77bbe73-9ae2-4aa7-94ed-cf3d3ec66004"
+                },
+                {
+                  "key": "reminderFrequency",
+                  "value": "3 Days",
+                  "type": "text",
+                  "uuid": "304401e6-48fa-40c4-bd50-b7e5376b8aa2"
+                },
+                {
+                  "key": "isDraft",
+                  "value": "false",
+                  "type": "text",
+                  "uuid": "9a8789b3-f9d3-4ed9-b22b-be9e8225474b"
+                },
+                {
+                  "key": "uploadApplication",
+                  "type": "file",
+                  "uuid": "8dbde353-bd4a-4a8e-8b3e-62ad0f0ef111",
+                  "src": "postman-cloud:///1f14583f-89f0-4740-a615-c27b2e5b77d5"
+                },
+                {
+                  "key": "additionalAttachments",
+                  "type": "file",
+                  "uuid": "d18a2cea-8540-4663-bd26-6f25403fc40c",
+                  "src": "postman-cloud:///1f145840-b469-4250-a00e-386d1d58360b"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/v1/rtis",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "rtis"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:5173"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1118"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"45e-eTCH5Rxswq9sw4CsrkNDFvbNvKM\""
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 02 May 2026 13:30:56 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"RTI created successfully\",\n    \"data\": {\n        \"applicantName\": \"Jayan\",\n        \"contactNumber\": \"123124352\",\n        \"gender\": \"Male\",\n        \"emailId\": \"u@test.com\",\n        \"address\": \"Delhi, India\",\n        \"rtiCaseNumber\": \"RTI/2026/MANAGER/0005\",\n        \"subject\": \"Request for information\",\n        \"applicationMode\": \"Online\",\n        \"dateOfReceipt\": \"2026-05-01T00:00:00.000Z\",\n        \"description\": \"Need details regarding project\",\n        \"department\": \"Manager\",\n        \"assignedOfficer\": \"Johny\",\n        \"dueDate\": \"2026-05-10T00:00:00.000Z\",\n        \"extendedDueDate\": \"2026-05-15T00:00:00.000Z\",\n        \"reminderFrequency\": \"3 Days\",\n        \"uploadApplication\": {\n            \"filename\": null,\n            \"originalName\": \"file1.jpg\",\n            \"mimetype\": \"image/jpeg\",\n            \"size\": 276636,\n            \"path\": \"https://res.cloudinary.com/dcxn7vile/image/upload/v1777728655/rti_uploads/1777728652572-file1.jpg.jpg\"\n        },\n        \"additionalAttachments\": [\n            {\n                \"filename\": null,\n                \"originalName\": \"images.jpeg\",\n                \"mimetype\": \"image/jpeg\",\n                \"size\": 6602,\n                \"path\": \"https://res.cloudinary.com/dcxn7vile/image/upload/v1777728655/rti_uploads/1777728654291-images.jpeg.jpg\"\n            }\n        ],\n        \"status\": \"Save Draft\",\n        \"isDeleted\": false,\n        \"_id\": \"69f5fc909a9b821b09dfa84c\",\n        \"createdAt\": \"2026-05-02T13:30:56.382Z\",\n        \"updatedAt\": \"2026-05-02T13:30:56.382Z\"\n    }\n}"
+        },
+        {
+          "name": "Without Required Fields",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "applicantName",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "8a0628d4-5225-487d-b970-1dacbebcfaa6"
+                },
+                {
+                  "key": "contactNumber",
+                  "value": "123124352",
+                  "type": "text",
+                  "uuid": "97c32a7d-d053-4eae-8af0-c51d212a8c5a"
+                },
+                {
+                  "key": "gender",
+                  "value": "Male",
+                  "type": "text",
+                  "uuid": "ec190c58-eaec-459e-b0c0-253e4fa4f14a"
+                },
+                {
+                  "key": "emailId",
+                  "value": "u@test.com",
+                  "type": "text",
+                  "uuid": "d6901cd2-8bf0-4842-82e0-e1995b4b8cd6"
+                },
+                {
+                  "key": "address",
+                  "value": "Delhi, India",
+                  "type": "text",
+                  "uuid": "caf42024-1d2e-4a71-ad49-a6762a723d9e"
+                },
+                {
+                  "key": "rtiCaseNumber",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "dc45eb60-c8f6-4c68-ae14-20ffeef56dff"
+                },
+                {
+                  "key": "subject",
+                  "value": "Request for information",
+                  "type": "text",
+                  "uuid": "597a5624-64bf-413a-9476-99446d204473"
+                },
+                {
+                  "key": "applicationMode",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "6af35f08-4b62-4f35-bc9b-6ab642cf05f0"
+                },
+                {
+                  "key": "dateOfReceipt",
+                  "value": "2026-05-01",
+                  "type": "text",
+                  "uuid": "4efd389e-083a-4753-ab6b-4f67b5884eac"
+                },
+                {
+                  "key": "description",
+                  "value": "Need details regarding project",
+                  "type": "text",
+                  "uuid": "de7ad7ff-638c-47c3-8430-b0ee418e9851"
+                },
+                {
+                  "key": "department",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "6f00d77f-a5ad-4af0-ad8f-cb7208b92a54"
+                },
+                {
+                  "key": "assignedOfficer",
+                  "value": "Johny",
+                  "type": "text",
+                  "uuid": "7de15f33-99f5-4c11-9e97-bac3d124f04e"
+                },
+                {
+                  "key": "dueDate",
+                  "value": "2026-05-10",
+                  "type": "text",
+                  "uuid": "d0b05b59-c4b7-45a4-93fc-30a0724d0559"
+                },
+                {
+                  "key": "extendedDueDate",
+                  "value": "2026-05-15",
+                  "type": "text",
+                  "uuid": "f77bbe73-9ae2-4aa7-94ed-cf3d3ec66004"
+                },
+                {
+                  "key": "reminderFrequency",
+                  "value": "3 Days",
+                  "type": "text",
+                  "uuid": "304401e6-48fa-40c4-bd50-b7e5376b8aa2"
+                },
+                {
+                  "key": "isDraft",
+                  "value": "false",
+                  "type": "text",
+                  "uuid": "9a8789b3-f9d3-4ed9-b22b-be9e8225474b"
+                },
+                {
+                  "key": "uploadApplication",
+                  "type": "file",
+                  "uuid": "8dbde353-bd4a-4a8e-8b3e-62ad0f0ef111",
+                  "src": "postman-cloud:///1f14583f-89f0-4740-a615-c27b2e5b77d5"
+                },
+                {
+                  "key": "additionalAttachments",
+                  "type": "file",
+                  "uuid": "d18a2cea-8540-4663-bd26-6f25403fc40c",
+                  "src": "postman-cloud:///1f145840-b469-4250-a00e-386d1d58360b"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/v1/rtis",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "rtis"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:5173"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "327"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"147-0gBOIQgF/NqgYqIDyv7bXcKCS4A\""
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 02 May 2026 13:40:48 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": false,\n    \"message\": \"Validation failed\",\n    \"errors\": [\n        {\n            \"field\": \"applicantName\",\n            \"message\": \"Applicant name is required\"\n        },\n        {\n            \"field\": \"applicationMode\",\n            \"message\": \"Invalid option: expected one of \\\"Online\\\"|\\\"Offline\\\"\"\n        },\n        {\n            \"field\": \"department\",\n            \"message\": \"Invalid option: expected one of \\\"Manager\\\"|\\\"Supervisor\\\"|\\\"Accountant\\\"\"\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get All Rti - With Filtering and pagination",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/rtis?page=1&limit=10",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "rtis"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Filter by Department",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/v1/rtis?department=Manager",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "rtis"
+              ],
+              "query": [
+                {
+                  "key": "department",
+                  "value": "Manager"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:5173"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "549"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"225-aWNsJNrhpJxCdqh1Fs0fasCUgpU\""
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 02 May 2026 11:00:25 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"RTIs fetched successfully\",\n    \"data\": {\n        \"data\": [\n            {\n                \"_id\": \"69f5b9e2db463cd6e5e1eeaf\",\n                \"applicantName\": \"Ravi Gupta\",\n                \"rtiCaseNumber\": \"RTI/2026/MANAGER/0002\",\n                \"department\": \"Manager\",\n                \"status\": \"Save Draft\",\n                \"createdAt\": \"2026-05-02T08:46:26.122Z\"\n            },\n            {\n                \"_id\": \"69f5bcfeb774b8e6962c2253\",\n                \"applicantName\": \"Priya Verma\",\n                \"rtiCaseNumber\": \"RTI/2026/MANAGER/0003\",\n                \"department\": \"Manager\",\n                \"status\": \"Save Draft\",\n                \"createdAt\": \"2026-05-02T08:59:42.757Z\"\n            }\n        ],\n        \"pagination\": {\n            \"total\": 2,\n            \"page\": 1,\n            \"limit\": 10,\n            \"totalPages\": 1,\n            \"hasNextPage\": false,\n            \"hasPrevPage\": false\n        }\n    }\n}"
+        },
+        {
+          "name": "Sorted with old documents",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/v1/rtis?page=1&limit=10&date=old",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "rtis"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "date",
+                  "value": "old"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:5173"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "2079"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"81f-6uK63Zrf9DLPgslhSLik8aREgQ4\""
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 02 May 2026 13:37:42 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"RTIs fetched successfully\",\n    \"data\": {\n        \"data\": [\n            {\n                \"_id\": \"69f4f049c222b1ca20f43104\",\n                \"applicantName\": \"manu\",\n                \"rtiCaseNumber\": \"RTI/2026/SUPERVISOR/0002\",\n                \"department\": \"Supervisor\",\n                \"status\": \"Save Draft\",\n                \"createdAt\": \"2026-05-01T18:26:17.033Z\"\n            },\n            {\n                \"_id\": \"69f5bbbfdb463cd6e5e1eeb1\",\n                \"applicantName\": \"Praveen Gupta\",\n                \"rtiCaseNumber\": \"RTI/2026/ACCOUNTANT/0005\",\n                \"department\": \"Accountant\",\n                \"status\": \"Save Draft\",\n                \"createdAt\": \"2026-05-02T08:54:23.237Z\"\n            },\n            {\n                \"_id\": \"69f5bcfeb774b8e6962c2253\",\n                \"applicantName\": \"Priya Verma\",\n                \"rtiCaseNumber\": \"RTI/2026/MANAGER/0003\",\n                \"department\": \"Manager\",\n                \"status\": \"Save Draft\",\n                \"createdAt\": \"2026-05-02T08:59:42.757Z\"\n            },\n            {\n                \"_id\": \"69f5bdfab774b8e6962c2254\",\n                \"applicantName\": \"manu\",\n                \"rtiCaseNumber\": \"RTI/2026/SUPERVISOR/0004\",\n                \"department\": \"Supervisor\",\n                \"status\": \"Save Draft\",\n                \"createdAt\": \"2026-05-02T09:03:54.141Z\"\n            },\n            {\n                \"_id\": \"69f5bf7efc6bac2ab012f12f\",\n                \"applicantName\": \"Ravi Gupta\",\n                \"rtiCaseNumber\": \"RTI/2026/SUPERVISOR/0005\",\n                \"department\": \"Supervisor\",\n                \"status\": \"Save Draft\",\n                \"createdAt\": \"2026-05-02T09:10:22.581Z\"\n            },\n            {\n                \"_id\": \"69f5d64d19e523d19a642551\",\n                \"applicantName\": \"Herma\",\n                \"rtiCaseNumber\": \"RTI/2026/ACCOUNTANT/0003\",\n                \"department\": \"Accountant\",\n                \"status\": \"Save Draft\",\n                \"createdAt\": \"2026-05-02T10:47:41.916Z\"\n            },\n            {\n                \"_id\": \"69f5d76ab16807fc966515ad\",\n                \"applicantName\": \"Herma\",\n                \"rtiCaseNumber\": \"RTI/2026/ACCOUNTANT/0006\",\n                \"department\": \"Accountant\",\n                \"status\": \"Save Draft\",\n                \"createdAt\": \"2026-05-02T10:52:26.846Z\"\n            },\n            {\n                \"_id\": \"69f5d95a43c7aa7924b324ec\",\n                \"applicantName\": \"shweata\",\n                \"rtiCaseNumber\": \"RTI/2026/ACCOUNTANT/0009\",\n                \"department\": \"Accountant\",\n                \"status\": \"Save Draft\",\n                \"createdAt\": \"2026-05-02T11:00:42.867Z\"\n            },\n            {\n                \"_id\": \"69f5e919389fe9865fe28f16\",\n                \"applicantName\": \"Annu Verma\",\n                \"rtiCaseNumber\": \"RTI/2026/MANAGER/0004\",\n                \"department\": \"Manager\",\n                \"status\": \"Save Draft\",\n                \"createdAt\": \"2026-05-02T12:07:53.415Z\"\n            },\n            {\n                \"_id\": \"69f5eb13b99e24bc195a54d9\",\n                \"applicantName\": \"Go Go GaGa\",\n                \"rtiCaseNumber\": \"RTI/2026/SUPERVISOR/0007\",\n                \"department\": \"Supervisor\",\n                \"status\": \"Save Draft\",\n                \"createdAt\": \"2026-05-02T12:16:19.296Z\"\n            }\n        ],\n        \"pagination\": {\n            \"total\": 12,\n            \"page\": 1,\n            \"limit\": 10,\n            \"totalPages\": 2,\n            \"hasNextPage\": true,\n            \"hasPrevPage\": false\n        }\n    }\n}"
+        },
+        {
+          "name": "Sorting with filtering",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/v1/rtis?page=1&limit=10&date=old&department=Supervisor&status=Save+Draft",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "rtis"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "date",
+                  "value": "old"
+                },
+                {
+                  "key": "department",
+                  "value": "Supervisor"
+                },
+                {
+                  "key": "status",
+                  "value": "Save+Draft"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:5173"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "936"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"3a8-jfp6hQyLUrhoJmle0+i8uxIQTjg\""
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 02 May 2026 13:39:13 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"RTIs fetched successfully\",\n    \"data\": {\n        \"data\": [\n            {\n                \"_id\": \"69f4f049c222b1ca20f43104\",\n                \"applicantName\": \"manu\",\n                \"rtiCaseNumber\": \"RTI/2026/SUPERVISOR/0002\",\n                \"department\": \"Supervisor\",\n                \"status\": \"Save Draft\",\n                \"createdAt\": \"2026-05-01T18:26:17.033Z\"\n            },\n            {\n                \"_id\": \"69f5bdfab774b8e6962c2254\",\n                \"applicantName\": \"manu\",\n                \"rtiCaseNumber\": \"RTI/2026/SUPERVISOR/0004\",\n                \"department\": \"Supervisor\",\n                \"status\": \"Save Draft\",\n                \"createdAt\": \"2026-05-02T09:03:54.141Z\"\n            },\n            {\n                \"_id\": \"69f5bf7efc6bac2ab012f12f\",\n                \"applicantName\": \"Ravi Gupta\",\n                \"rtiCaseNumber\": \"RTI/2026/SUPERVISOR/0005\",\n                \"department\": \"Supervisor\",\n                \"status\": \"Save Draft\",\n                \"createdAt\": \"2026-05-02T09:10:22.581Z\"\n            },\n            {\n                \"_id\": \"69f5eb13b99e24bc195a54d9\",\n                \"applicantName\": \"Go Go GaGa\",\n                \"rtiCaseNumber\": \"RTI/2026/SUPERVISOR/0007\",\n                \"department\": \"Supervisor\",\n                \"status\": \"Save Draft\",\n                \"createdAt\": \"2026-05-02T12:16:19.296Z\"\n            }\n        ],\n        \"pagination\": {\n            \"total\": 4,\n            \"page\": 1,\n            \"limit\": 10,\n            \"totalPages\": 1,\n            \"hasNextPage\": false,\n            \"hasPrevPage\": false\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get RTI by ID",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"applicantName\": \"Test Ashish\",\n  \"contactNumber\": \"9876543210\",\n  \"rtiCaseNumber\": \"RTI109\",\n  \"subject\": \"Invalid file test\",\n  \"applicationMode\": \"Online\",\n  \"dateOfReceipt\": \"2026-05-01\",\n  \"department\": \"Accountant\",\n  \"dueDate\": \"2026-05-10\",\n  \"reminderFrequency\": \"3 Days\",\n\n  \"uploadApplication\": {\n    \"filename\": \"file.png\",\n    \"originalName\": \"file.png\",\n    \"mimetype\": \"image/png\",\n    \"size\": 200000,\n    \"path\": \"/uploads/file.png\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/rtis/69f4bdd847962d4c6c4d3414",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "rtis",
+            "69f4bdd847962d4c6c4d3414"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Invalid Id - Not Found",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"applicantName\": \"Test Ashish\",\n  \"contactNumber\": \"9876543210\",\n  \"rtiCaseNumber\": \"RTI109\",\n  \"subject\": \"Invalid file test\",\n  \"applicationMode\": \"Online\",\n  \"dateOfReceipt\": \"2026-05-01\",\n  \"department\": \"Accountant\",\n  \"dueDate\": \"2026-05-10\",\n  \"reminderFrequency\": \"3 Days\",\n\n  \"uploadApplication\": {\n    \"filename\": \"file.png\",\n    \"originalName\": \"file.png\",\n    \"mimetype\": \"image/png\",\n    \"size\": 200000,\n    \"path\": \"/uploads/file.png\"\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/v1/rtis/69f4d0deb5bd1e685f93504d",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "rtis",
+                "69f4d0deb5bd1e685f93504d"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:5173"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "55"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"37-Ac3IEuLq7PuwVnxR0eaa4Kdcu6M\""
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 02 May 2026 13:34:45 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": false,\n    \"message\": \"RTI not found\",\n    \"errors\": []\n}"
+        },
+        {
+          "name": "Valid Id - Fetched Succesfully",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"applicantName\": \"Test Ashish\",\n  \"contactNumber\": \"9876543210\",\n  \"rtiCaseNumber\": \"RTI109\",\n  \"subject\": \"Invalid file test\",\n  \"applicationMode\": \"Online\",\n  \"dateOfReceipt\": \"2026-05-01\",\n  \"department\": \"Accountant\",\n  \"dueDate\": \"2026-05-10\",\n  \"reminderFrequency\": \"3 Days\",\n\n  \"uploadApplication\": {\n    \"filename\": \"file.png\",\n    \"originalName\": \"file.png\",\n    \"mimetype\": \"image/png\",\n    \"size\": 200000,\n    \"path\": \"/uploads/file.png\"\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/v1/rtis/69f5d64d19e523d19a642551",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "rtis",
+                "69f5d64d19e523d19a642551"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:5173"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1124"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"464-bunEuNloI1KkPLEE0XpJ/BvH4I8\""
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 02 May 2026 13:35:41 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"RTI fetched successfully\",\n    \"data\": {\n        \"_id\": \"69f5d64d19e523d19a642551\",\n        \"applicantName\": \"Herma\",\n        \"contactNumber\": \"123124352\",\n        \"gender\": \"Male\",\n        \"emailId\": \"u@test.com\",\n        \"address\": \"Delhi, India\",\n        \"rtiCaseNumber\": \"RTI/2026/ACCOUNTANT/0003\",\n        \"subject\": \"Request for information\",\n        \"applicationMode\": \"Online\",\n        \"dateOfReceipt\": \"2026-05-01T00:00:00.000Z\",\n        \"description\": \"Need details regarding project\",\n        \"department\": \"Accountant\",\n        \"assignedOfficer\": \"Johny\",\n        \"dueDate\": \"2026-05-10T00:00:00.000Z\",\n        \"extendedDueDate\": \"2026-05-15T00:00:00.000Z\",\n        \"reminderFrequency\": \"3 Days\",\n        \"uploadApplication\": {\n            \"filename\": null,\n            \"originalName\": \"file1.jpg\",\n            \"mimetype\": \"image/jpeg\",\n            \"size\": 276636,\n            \"path\": \"https://res.cloudinary.com/dcxn7vile/image/upload/v1777718861/rti_uploads/1777718858393-file1.jpg.jpg\"\n        },\n        \"additionalAttachments\": [\n            {\n                \"filename\": null,\n                \"originalName\": \"images.jpeg\",\n                \"mimetype\": \"image/jpeg\",\n                \"size\": 6602,\n                \"path\": \"https://res.cloudinary.com/dcxn7vile/image/upload/v1777718860/rti_uploads/1777718860005-images.jpeg.jpg\"\n            }\n        ],\n        \"status\": \"Save Draft\",\n        \"isDeleted\": false,\n        \"createdAt\": \"2026-05-02T10:47:41.916Z\",\n        \"updatedAt\": \"2026-05-02T10:47:41.916Z\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete RTI (Soft Delete)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"applicantName\": \"Test Ashish\",\n  \"contactNumber\": \"9876543210\",\n  \"rtiCaseNumber\": \"RTI109\",\n  \"subject\": \"Invalid file test\",\n  \"applicationMode\": \"Online\",\n  \"dateOfReceipt\": \"2026-05-01\",\n  \"department\": \"Accountant\",\n  \"dueDate\": \"2026-05-10\",\n  \"reminderFrequency\": \"3 Days\",\n\n  \"uploadApplication\": {\n    \"filename\": \"file.png\",\n    \"originalName\": \"file.png\",\n    \"mimetype\": \"image/png\",\n    \"size\": 200000,\n    \"path\": \"/uploads/file.png\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/v1/rtis/69f4bdd847962d4c6c4d3414",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "rtis",
+            "69f4bdd847962d4c6c4d3414"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "With Wrong Id - Error Res",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"applicantName\": \"Test Ashish\",\n  \"contactNumber\": \"9876543210\",\n  \"rtiCaseNumber\": \"RTI109\",\n  \"subject\": \"Invalid file test\",\n  \"applicationMode\": \"Online\",\n  \"dateOfReceipt\": \"2026-05-01\",\n  \"department\": \"Accountant\",\n  \"dueDate\": \"2026-05-10\",\n  \"reminderFrequency\": \"3 Days\",\n\n  \"uploadApplication\": {\n    \"filename\": \"file.png\",\n    \"originalName\": \"file.png\",\n    \"mimetype\": \"image/png\",\n    \"size\": 200000,\n    \"path\": \"/uploads/file.png\"\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/v1/rtis/69f4ca830b1b90e0fdc3c3f3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "rtis",
+                "69f4ca830b1b90e0fdc3c3f3"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:5173"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "74"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"4a-P2Pzrsq1kukkQUJpoKOgAy2WneE\""
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 02 May 2026 13:32:15 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": false,\n    \"message\": \"RTI not found or already deleted\",\n    \"errors\": []\n}"
+        },
+        {
+          "name": "With Valid Id - Res Succes",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"applicantName\": \"Test Ashish\",\n  \"contactNumber\": \"9876543210\",\n  \"rtiCaseNumber\": \"RTI109\",\n  \"subject\": \"Invalid file test\",\n  \"applicationMode\": \"Online\",\n  \"dateOfReceipt\": \"2026-05-01\",\n  \"department\": \"Accountant\",\n  \"dueDate\": \"2026-05-10\",\n  \"reminderFrequency\": \"3 Days\",\n\n  \"uploadApplication\": {\n    \"filename\": \"file.png\",\n    \"originalName\": \"file.png\",\n    \"mimetype\": \"image/png\",\n    \"size\": 200000,\n    \"path\": \"/uploads/file.png\"\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/v1/rtis/69f5bb70db463cd6e5e1eeb0",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "rtis",
+                "69f5bb70db463cd6e5e1eeb0"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "http://localhost:5173"
+            },
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Access-Control-Allow-Credentials",
+              "value": "true"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "53"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"35-/dzyj2j3Ze4vrgbzQaCsZB+XLuE\""
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 02 May 2026 13:34:05 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"success\": true,\n    \"message\": \"RTI deleted successfully\"\n}"
+        }
+      ]
+    }
+  ]
+}

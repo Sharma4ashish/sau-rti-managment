@@ -1,7 +1,7 @@
 export default {
   GENDER: ["Male", "Female", "Other"],
 
-  DATE:["old", "latest"],
+  DATE:["old", "new"],
 
   DEPARTMENTS: ["Manager", "Supervisor", "Accountant"],
 
