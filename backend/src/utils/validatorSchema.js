@@ -27,13 +27,16 @@ const createRTISchema = z
       .regex(/^[+]?[\d\s\-()]{7,15}$/, "Invalid contact number"),
 
     gender: z.enum(GENDER).optional(),
-    emailId: z.string().email("Invalid email").optional(),
-    address: z.string().max(300).optional(),
+    emailId: z
+      .string()
+      .optional()
+      .refine(
+        (val) => !val || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
+        "Invalid email"
+      ),
+      address: z.string().max(300).optional(),
 
-    rtiCaseNumber: z
-      .string({ required_error: "RTI Case Number is required" })
-      .min(1, "RTI Case Number is required")
-      .transform((val) => val.toUpperCase()),
+  
 
     subject: z
       .string({ required_error: "Subject is required" })
@@ -66,8 +69,11 @@ const createRTISchema = z
     }),
 
     assignedOfficer: z.string().optional(),
-    extendedDueDate: z.coerce.date().optional(),
-
+    extendedDueDate: z
+      .preprocess((val) => {
+        if (!val) return undefined; // handles "", null, undefined
+        return new Date(val);
+      }, z.date().optional()),
     reminderFrequency: z.enum(REMINDER_FREQUENCY, {
       errorMap: () => ({
         message:

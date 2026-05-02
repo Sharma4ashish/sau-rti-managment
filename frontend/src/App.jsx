@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from './components/layout/Mainlayout';
 import RTIListPage from './pages/RtiListPage';
-import RtiForm from './components/RtiForm';
-import { useEffect,useState } from 'react';
-// import { rtiService } from './services/api';
 import { RTIDetailsPage } from './pages/RTIDetailsPage';
 import { RTIRegistrationForm } from './components/RTIRegistrationForm';
+import { Toaster } from "react-hot-toast";
+import CreateRTI from './pages/CreateRTI';
+
 
 
 
@@ -21,10 +21,12 @@ function App() {
         {/* MainLayout wraps all routes inside it */}
         <Route path="/" element={<MainLayout />}>
           <Route index element={<RTIListPage />} />
-          <Route path="add-rti" element={<RTIRegistrationForm />} />
+          <Route path="/rti/create" element={<CreateRTI />} />
           <Route path="/rti/:id" element={<RTIDetailsPage />} />
         </Route>
       </Routes>
+      <Toaster position="top-center" />
+
     </Router>
   );
 }

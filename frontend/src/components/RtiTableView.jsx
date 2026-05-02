@@ -1,6 +1,6 @@
 import RtiRow from "./RtiRow";
 
-function RtiTable({ data = [] }) {
+function RtiTable({ data = [], onDelete }) {
   
   return (
     <div className="bg-white rounded-lg shadow">
@@ -28,7 +28,7 @@ function RtiTable({ data = [] }) {
               </tr>
             ) : (
               data.map((item, index) => (
-                <RtiRow key={item._id  || index} data={item} />
+                <RtiRow key={item._id  || index} data={item} onDelete={onDelete} />
               ))
             )}
           </tbody>

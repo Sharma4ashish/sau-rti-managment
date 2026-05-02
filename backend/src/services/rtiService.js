@@ -4,35 +4,75 @@ const ApiError = require("../utils/ApiError");
 /**
  * @desc Create a new RTI
  */
+// const createRTI = async (payload) => {
+
+//     //deletefiles multer uploaded if error happer in between saving data to db
+
+//     // if (!payload.rtiCaseNumber) {
+//     //   throw new ApiError(400, "RTI Case Number is required");
+//     // }
+
+//     if (!payload.department) {
+//       throw new ApiError(400, "Department is required");
+//     }
+//     payload.rtiCaseNumber = await generateRTICaseNumber(payload.department);
+
+
+//   const existing = await RTI.findOne({
+//     rtiCaseNumber: payload.rtiCaseNumber,
+//   });
+
+//   if (existing) {
+//     throw new ApiError(
+//       409,
+//       `RTI with Case Number '${payload.rtiCaseNumber}' already exists`
+//     );
+//   }
+
+//   const rti = await RTI.create(payload);
+
+//   if (!rti) {
+//     throw new ApiError(500, "Failed to create RTI");
+//   }
+
+//   return rti;
+// };
+
 const createRTI = async (payload) => {
-
-    //deletefiles multer uploaded if error happer in between saving data to db
-
-    // if (!payload.rtiCaseNumber) {
-    //   throw new ApiError(400, "RTI Case Number is required");
-    // }
-
-    if (!payload.department) {
-      throw new ApiError(400, "Department is required");
-    }
-    payload.rtiCaseNumber = await generateRTICaseNumber(payload.department);
-
-
-  const existing = await RTI.findOne({
-    rtiCaseNumber: payload.rtiCaseNumber,
-  });
-
-  if (existing) {
-    throw new ApiError(
-      409,
-      `RTI with Case Number '${payload.rtiCaseNumber}' already exists`
-    );
+  if (!payload.department) {
+    throw new ApiError(400, "Department is required");
   }
 
-  const rti = await RTI.create(payload);
+  const year = new Date().getFullYear();
+
+  // initial count
+  let count = await RTI.countDocuments({ department: payload.department });
+
+  let attempts = 0;
+  let rti;
+
+  while (!rti && attempts < 5) {
+    try {
+      const sequence = String(count + 1).padStart(4, "0");
+
+      payload.rtiCaseNumber = `RTI/${year}/${payload.department.toUpperCase()}/${sequence}`;
+
+      rti = await RTI.create(payload);
+    } catch (error) {
+      if (error.code === 11000) {
+        attempts++;
+        count++; // 🔥 force next number
+      } else {
+        throw error;
+      }
+    }
+  }
 
   if (!rti) {
-    throw new ApiError(500, "Failed to create RTI");
+    throw new ApiError(
+      500,
+      "Could not generate unique RTI number. Try again."
+    );
   }
 
   return rti;
@@ -101,21 +141,42 @@ const getRTIById = async (id) => {
 /**
  * @desc Soft delete RTI
  */
+// const deleteRTI = async (id) => {
+//   const rti = await RTI.findOne({
+//     _id: id,
+//     isDeleted: false,
+//   });
+
+//   if (!rti) {
+//     throw new ApiError(404, "RTI not found");
+//   }
+
+//   rti.isDeleted = true;
+//   rti.deletedAt = new Date();
+
+//   await rti.save();
+// };
+
+
 const deleteRTI = async (id) => {
-  const rti = await RTI.findOne({
-    _id: id,
-    isDeleted: false,
-  });
+  const rti = await RTI.findOneAndUpdate(
+    { _id: id, isDeleted: false },
+    {
+      $set: {
+        isDeleted: true,
+        },
+    },
+    { new: true }
+  );
 
   if (!rti) {
-    throw new ApiError(404, "RTI not found");
+    throw new ApiError(404, "RTI not found or already deleted");
   }
 
-  rti.isDeleted = true;
-  rti.deletedAt = new Date();
-
-  await rti.save();
+  return rti;
 };
+
+
 
 /**
  * @desc Update RTI
