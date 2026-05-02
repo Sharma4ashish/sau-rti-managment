@@ -16,6 +16,13 @@ A full-stack RTI (Right to Information) management system with pagination, filte
 * ⚡ Toast Notifications
 
 ---
+## Further improvements ideas
+will use Redux 
+create Reusable form for update and create feat and while updating only allowed required field to edit rest will be disabled 
+A single reusable form component that supports both Create and Update workflows.
+create → all fields editable
+edit → only selected fields editable
+
 
 ## 🛠️ Tech Stack
 
@@ -54,7 +61,7 @@ A full-stack RTI (Right to Information) management system with pagination, filte
 
 ---
 
-## 🎥 Demo Videos
+## 🎥 Demo Videos (Watch App Flow)
 
 ### 📊 RTI Dashboard Overview
 
@@ -65,6 +72,10 @@ A full-stack RTI (Right to Information) management system with pagination, filte
 [![RTI Flow](https://img.youtube.com/vi/lIMRpqVSvFM/0.jpg)](https://youtu.be/lIMRpqVSvFM)
 
 ---
+
+![RTI List](./docs/rti.postman_collection.json)
+
+
 
 ## ⚙️ Installation
 
