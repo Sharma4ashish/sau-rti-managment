@@ -1,4 +1,5 @@
 function TableFooter({ page, totalPages, limit, setPage, setLimit }) {
+
     return (
         <div className="flex flex-col md:flex-row justify-between items-center p-4 gap-4">
 
