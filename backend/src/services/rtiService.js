@@ -63,7 +63,7 @@ const getRTIs = async (query) => {
       .sort(sort)
       .skip(skip)
       .limit(limit)
-      .select("rtiNumber applicantName department status createdAt")
+      .select("rtiCaseNumber applicantName department status createdAt")
       .lean(),
 
     RTI.countDocuments(filter),

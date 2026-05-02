@@ -2,8 +2,6 @@ import { useNavigate } from "react-router-dom";
 
 function RtiRow({ data }) {
   const navigate = useNavigate();
-    console.log("neww ",data);
-
 
   const getStatusColor = (status) => {
     switch (status) {

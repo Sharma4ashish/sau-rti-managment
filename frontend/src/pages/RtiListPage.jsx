@@ -8,8 +8,6 @@ function RTIListPage() {
 
   const [page, setPage] = useState(1);
   const { data, loading } = useRTIs(page);
-
-  console.log(data);
   
   return (
     <div>
