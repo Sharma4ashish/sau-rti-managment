@@ -12,7 +12,7 @@ const startServer = async () => {
         await connectDB();        
 
         app.listen(config.port, () => {
-            console.log(`Server running in development mode on port ${config.port}`)
+            console.log(`Server running mode on port ${config.port}`)
         })
 
     } catch (error) {
