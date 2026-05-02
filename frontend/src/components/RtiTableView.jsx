@@ -1,43 +1,40 @@
 import RtiRow from "./RtiRow";
 
-const dummyData = [
-  {
-    rtiNo: "RTI/2025/DEP/0001",
-    applicant: "James Kirwin",
-    department: "Manager",
-    date: "10-12-2025",
-    status: "Verified",
-  },
-  {
-    rtiNo: "RTI/2025/DEP/0002",
-    applicant: "Francis Chang",
-    department: "Supervisor",
-    date: "10-12-2025",
-    status: "Pending",
-  },
-];
-
-function RtiTable() {
+function RtiTable({ data = [] }) {
+  
   return (
-    <div className="bg-white rounded-lg shadow overflow-hidden">
-      <table className="w-full text-sm">
-        <thead className="bg-gray-100 text-gray-600">
-          <tr>
-            <th className="p-3 text-left">RTI No.</th>
-            <th className="p-3 text-left">Applicant</th>
-            <th className="p-3 text-left">Department</th>
-            <th className="p-3 text-left">Date</th>
-            <th className="p-3 text-left">Status</th>
-            <th className="p-3 text-left">Action</th>
-          </tr>
-        </thead>
+    <div className="bg-white rounded-lg shadow">
 
-        <tbody>
-          {dummyData.map((item, index) => (
-            <RtiRow key={index} data={item} />
-          ))}
-        </tbody>
-      </table>
+      <div className="overflow-x-auto">
+        <table className="min-w-[700px] w-full text-sm">
+          
+          <thead className="bg-gray-100 text-gray-600">
+            <tr>
+              <th className="p-3 text-left">RTI No.</th>
+              <th className="p-3 text-left">Applicant</th>
+              <th className="p-3 text-left">Department</th>
+              <th className="p-3 text-left">Date</th>
+              <th className="p-3 text-left">Status</th>
+              <th className="p-3 text-left">Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {data.length === 0 ? (
+              <tr>
+                <td colSpan="6" className="text-center p-4">
+                  No RTIs found
+                </td>
+              </tr>
+            ) : (
+              data.map((item, index) => (
+                <RtiRow key={item._id  || index} data={item} />
+              ))
+            )}
+          </tbody>
+
+        </table>
+      </div>
     </div>
   );
 }

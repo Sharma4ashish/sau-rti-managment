@@ -1,34 +1,21 @@
+import axios from "axios";
+import { toast } from "react-hot-toast";
 
-const BASE_URL = "http://localhost:8000/api/v1/rtis";
+const api = axios.create({
+  baseURL: "http://localhost:8000/api/v1",
+  withCredentials: true,
+});
 
-export const rtiService = {
-  getRTIs: async (params = {}) => {
-    const query = new URLSearchParams(params).toString();
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    const message =
+      error.response?.data?.message || "Something went wrong";
 
-    const res = await fetch(`${BASE_URL}?${query}`);
-    if (!res.ok) throw new Error("Failed to fetch RTIs");
+    toast.error(message);
 
-    return res.json();
-  },
+    return Promise.reject(error);
+  }
+);
 
-  getRTIById: async (id) => {
-    const res = await fetch(`${BASE_URL}/${id}`);
-    if (!res.ok) throw new Error("Failed to fetch RTI");
-
-    return res.json();
-  },
-
-  createRTI: async (data) => {
-    const res = await fetch(BASE_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-
-    if (!res.ok) throw new Error("Failed to create RTI");
-
-    return res.json();
-  },
-};
+export default api;

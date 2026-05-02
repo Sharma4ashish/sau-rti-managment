@@ -1,18 +1,10 @@
-const InfoItem = ({ label, value }) => {
+export function InfoItem({ label, value, className = "" }) {
   return (
-    <div className="min-w-0">
-      <p className="text-xs sm:text-sm text-gray-500 mb-1">
-        {label}
-      </p>
-
-      <p className="
-        font-medium 
-        text-sm sm:text-base 
-        text-gray-800 
-        break-words
-      ">
-        {value || "-"}
+    <div className={className}>
+      <p className="text-sm text-gray-500">{label}</p>
+      <p className="mt-1 text-base font-medium text-gray-900">
+        {value}
       </p>
     </div>
   );
-};
+}

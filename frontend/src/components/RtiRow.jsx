@@ -1,4 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 function RtiRow({ data }) {
+  const navigate = useNavigate();
+    console.log("neww ",data);
+
+
   const getStatusColor = (status) => {
     switch (status) {
       case "Verified":
@@ -13,19 +19,49 @@ function RtiRow({ data }) {
   };
 
   return (
-    <tr className="border-t">
-      <td className="p-3">{data.rtiNo}</td>
-      <td className="p-3">{data.applicant}</td>
-      <td className="p-3">{data.department}</td>
-      <td className="p-3">{data.date}</td>
-      <td className={`p-3 font-semibold   ${getStatusColor(data.status)}`}>
-        {data.status}
-      </td>
+    <tr
+      className="border-t hover:bg-gray-50 cursor-pointer"
+      onClick={() => navigate(`/rti/${data._id}`)}
+    >
+      <td className="p-3">{data.rtiCaseNumber || "-"}</td>
+      <td className="p-3">{data.applicantName || "-"}</td>
+      <td className="p-3">{data.department || "-"}</td>
+
       <td className="p-3">
+        {data.createdAt
+          ? new Date(data.createdAt).toLocaleDateString()
+          : "-"}
+      </td>
+
+      <td className={`p-3 font-semibold ${getStatusColor(data.status)}`}>
+        {data.status || "-"}
+      </td>
+
+      {/* ACTIONS */}
+      <td className="p-3" onClick={(e) => e.stopPropagation()}>
         <div className="flex gap-2">
-          <button className="border px-2 py-1 rounded">👁</button>
-          <button className="border px-2 py-1 rounded">✏️</button>
-          <button className="border px-2 py-1 rounded">🗑</button>
+
+          <button
+            onClick={() => navigate(`/rti/${data._id}`)}
+            className="border px-2 py-1 rounded hover:bg-gray-100"
+          >
+            👁
+          </button>
+
+          <button
+            onClick={() => navigate(`/rti/edit/${data._id}`)}
+            className="border px-2 py-1 rounded hover:bg-gray-100"
+          >
+            ✏️
+          </button>
+
+          <button
+            onClick={() => console.log("Delete", data._id)}
+            className="border px-2 py-1 rounded hover:bg-red-100"
+          >
+            🗑
+          </button>
+
         </div>
       </td>
     </tr>
